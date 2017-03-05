@@ -5,5 +5,8 @@
 /essential
 /more
 /photo
+<<<<<<< HEAD
 *.php
 *.txt
+=======
+>>>>>>> be018ac608f4987837d0817a73da6bad991169b5
