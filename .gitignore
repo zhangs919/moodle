@@ -43,7 +43,15 @@
 /search
 /tag
 /test
-
+/theme/adaptable/
+/theme/boost/
+/theme/bootstrapbase/
+/theme/clean/
+/theme/essential/
+/theme/more/
+/theme/photo/
+/theme/*.php
+/theme/*.txt
 /user
 /userpix
 /webservice
