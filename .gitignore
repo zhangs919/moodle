@@ -50,11 +50,14 @@
 /theme/essential/
 /theme/more/
 /theme/photo/
+/theme/base/
+/theme/canvas/
 /theme/*.php
 /theme/*.txt
 /user
 /userpix
 /webservice
+.csslintrc
 .eslintignore
 .eslintrc
 .gitattributes
