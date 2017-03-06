@@ -43,6 +43,13 @@ function theme_andy_process_css($css, $theme) {
     $logo = $theme->setting_file_url('logo', 'logo');
     $css = theme_andy_set_logo($css, $logo);
 
+    // 为整个网站页面设置背景图片
+    $pagebackground = $theme->setting_file_url('pagebackground', 'pagebackground');
+    $css = theme_andy_set_pagebackground($css, $pagebackground);
+
+    // 设置背景图片repeat
+    $background
+
     // Set custom CSS.
     if (!empty($theme->settings->customcss)) {
         $customcss = $theme->settings->customcss;
@@ -74,6 +81,25 @@ function theme_andy_set_logo($css, $logo) {
 }
 
 /**
+ * 将背景图片添加到css
+ *
+ * @param $css css样式
+ * @param $pagebackground 背景图片地址
+ * @return mixed
+ */
+function theme_andy_set_pagebackground($css, $pagebackground) {
+    $tag = '[[setting:pagebackground]]';
+    $replacement = $pagebackground;
+    if(is_null($replacement)) {
+        $replacement = '';
+    }
+
+    $css = str_replace($tag, $replacement, $css);
+
+    return $css;
+}
+
+/**
  * Serves any files associated with the theme settings.
  *
  * @param stdClass $course
@@ -86,13 +112,13 @@ function theme_andy_set_logo($css, $logo) {
  * @return bool
  */
 function theme_andy_pluginfile($course, $cm, $context, $filearea, $args, $forcedownload, array $options = array()) {
-    if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'logo') {
+    if ($context->contextlevel == CONTEXT_SYSTEM and $filearea === 'logo' || $filearea === 'pagebackground') {
         $theme = theme_config::load('andy');
         // By default, theme files must be cache-able by both browsers and proxies.
         if (!array_key_exists('cacheability', $options)) {
             $options['cacheability'] = 'public';
         }
-        return $theme->setting_file_serve('logo', $args, $forcedownload, $options);
+        return $theme->setting_file_serve($filearea, $args, $forcedownload, $options);
     } else {
         send_file_not_found();
     }

@@ -5,3 +5,9 @@
  */
 /* @Test css */
 
+body {
+    background-image: url([[setting:pagebackground]]);
+    -webkit-background-size:cover;
+    background-size:cover;
+    background-repeat:[[setting:backgroundrepeat]];
+}

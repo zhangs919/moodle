@@ -65,4 +65,30 @@ if ($ADMIN->fulltree) {
     $setting = new admin_setting_confightmleditor($name, $title, $description, $default);
     $setting->set_updatedcallback('theme_reset_all_caches');
     $settings->add($setting);
+
+    // 背景图片设置
+    $name = 'theme_andy/pagebackground';
+    $title = get_string('pagebackground', 'theme_andy');
+    $description = get_string('pagebackgrounddesc', 'theme_andy');
+    $setting = new admin_setting_configstoredfile($name, $title, $description, 'pagebackground');
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
+    // 背景图片repeat设置
+    $name = 'theme_andy/backgroundrepeat';
+    $title = get_string('backgroundrepeat', 'theme_andy');
+    $description = get_string('backgroundrepeat_desc', 'theme_andy');
+    $default = 'repeat';
+    $choices = [
+        '0' => get_string('default'),
+        'repeat' => get_string('backgroundrepeatrepeat', 'theme_andy'),
+        'repeat-x' => get_string('backgroundrepeatrepeatx', 'theme_andy'),
+        'repeat-y' => get_string('backgroundrepeatrepeaty', 'theme_andy'),
+        'no-repeat' => get_string('backgroundrepeatnorepeat', 'theme_andy'),
+    ];
+    $setting = new admin_setting_configselect($name, $title, $description, $default, $choices);
+    $setting->set_updatedcallback('theme_reset_all_caches');
+    $settings->add($setting);
+
+
 }

@@ -59,6 +59,18 @@ $string['invertdesc'] = 'Swaps text and background for the navbar at the top of 
 $string['logo'] = 'Logo';
 $string['logodesc'] = 'The logo is only displayed in the header of the front page and login page.<br /> If the height of your logo is more than 75px add div.logo {height: 100px;} to the Custom CSS box below, amending accordingly if the height is other than 100px.';
 
+// pagebackground
+$string['pagebackground'] = '背景图片设置';
+$string['pagebackgrounddesc'] = '背景图片设置描述内容';
+
+// backgroundrepeat
+$string['backgroundrepeat'] = '背景图片repeat设置';
+$string['backgroundrepeat_desc'] = '背景图片repeat设置描述';
+$string['backgroundrepeatnorepeat'] = 'No repeat';
+$string['backgroundrepeatrepeat'] = 'Repeat';
+$string['backgroundrepeatrepeatx'] = 'Repeat horizontally';
+$string['backgroundrepeatrepeaty'] = 'Repeat vertically';
+
 $string['pluginname'] = 'Andy';
 
 $string['region-side-post'] = 'Right';

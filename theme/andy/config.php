@@ -33,7 +33,7 @@ $THEME->name = 'andy';
 /////////////////////////////////
 // The only thing you need to change in this file when copying it to
 // create a new theme is the name above. You also need to change the name
-// in version.php and lang/en/theme_andy.php as well.aa
+// in version.php and lang/en/theme_andy.php as well.
 //////////////////////////////////
 //
 $THEME->doctype = 'html5';
@@ -45,13 +45,13 @@ $THEME->parents = array('bootstrapbase');
 //$THEME->parents_exclude_sheets = array('bootstrapbase' => array('moodle', 'editor'));
 
 // 引入样式文件
-$THEME->sheets = array('andy');
-$THEME->sheets = array('custom');
+$THEME->sheets = array('andy', 'custom');
 
 $THEME->supportscssoptimisation = false;
 $THEME->yuicssmodules = array();
 $THEME->enable_dock = false; // 模块是否可停靠
 $THEME->editor_sheets = array();
+
 
 $onecolumnregions[] = 'page-top';
 $standardregions[] = 'page-top';
@@ -68,4 +68,5 @@ $THEME->layouts = array(
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->csspostprocess = 'theme_andy_process_css';
 
-$THEME->hidefromselector = true;
+// 在主题选择器中是否隐藏此主题
+$THEME->hidefromselector = false;
